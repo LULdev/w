@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diabolical Studios</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <style>
+    .game-container {
+      background-color: #1e59f1;
+      width: 100%;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .droppable {
+      padding: 10px;
+      border: 2px dashed #aaaaaa;
+      display: list-item;
+      justify-content: center;
+      align-items: center;
+      min-width: 60px;
+      min-height: 40px;
+      border-radius: 8px;
+      margin: 16px;
+      transition: all 0.3s ease; /* Animation */
+      cursor: none; /* Change cursor on hover */
+    }
+
+    .droppable:hover {
+      transform: scale(1.05); /* Scale up on hover */
+      border-color: #ffffff; /* Change border color on hover */
+    }
+
+    .draggable {
+      display: inline-block;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: grab;
+      margin: 8px;
+      transition: all 0.3s ease; /* Animation */
+      background-color: rgba(16 18 27 / 40%);; /* Add some color */
+      color: #fff;
+
+      font-family: "Bungee";
+      font-size: medium;
+    }
+
+    .draggable:hover {
+      transform: scale(1.1); /* Scale up on hover */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+    }
+
+    #game-results {
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+
+      font-family: "Bungee";
+      font-size: x-large;
+      margin: 10px;
+    }
+
+    @media (max-width: 600px) {
+      /* Make it look better on small screens */
+      .draggable {
+        min-width: 30px;
+        min-height: 20px;
+      }
+
+      .game-container {
+        flex-direction: column;
+      }
+    }
+  </style>
+
+<body>
+  <div class="content-wrapper-header">
+    <div class="content-wrapper-context">
+      <h3 class="img-content">Our Portfolio</h3>
+      <div class="content-text">
+        Previous projects we worked on as the Diabolical Studios team.
+      </div>
+    </div>
+  </div>
+  <div class="content-section">
+    <div class="game-container">
+      <div
+        id="div1"
+        style="
+          margin: 20px;
+          text-align: center;
+          font-family: 'Bungee';
+          font-size: larger;
+        "
+      >
+        I like
+        <div
+          id="div2"
+          ondrop="drop(event)"
+          ondragover="allowDrop(event)"
+          class="droppable"
+        ></div>
+        games.
+      </div>
+      <div
+        style="text-align: center;"
+      >
+        <p
+          id="drag1"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          action
+        </p>
+        <p
+          id="drag2"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          puzzle
+        </p>
+        <p
+          id="drag3"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          strategy
+        </p>
+        <p
+          id="drag4"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          3D
+        </p>
+        <p
+          id="drag5"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          2D
+        </p>
+        <p
+          id="drag6"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          RPG
+        </p>
+
+        <p
+          id="drag7"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          Horror
+        </p>
+
+        <p
+          id="drag8"
+          draggable="true"
+          ondragstart="drag(event)"
+          class="draggable"
+        >
+          VR
+        </p>
+      </div>
+      <div id="game-results" style="text-align: center"></div>
+    </div>
+
+    <div class="team-container" id="teamContainer">
+      <div class="card" data-game-type="puzzle action 3D">
+        <a
+          href="https://doruksasmaz.com/potato.html"
+          data-page="home.html"
+          style="color: #fff"
+        >
+          <video
+            class="desktop-video"
+            style="max-height: 200px; object-fit: cover; width: 100%"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="content/POTATO.webm" type="video/webm" />
+          </video>
+          <img
+            class="mobile-image"
+            src="content/POTATO.png"
+            style="max-height: 200px"
+            alt="Enhancer Gaming Hackathon"
+          />
+
+          <div class="card-content" style="line-height: normal">
+            <h4 style="font-family: 'Bungee'; font-weight: 100">
+              P.O.T.A.T.O
+            </h4>
+            <p>
+              Experience life as a sentient spud in a high-tech rollercoaster
+              ride, P.O.T.A.T.O.
+            </p>
+          </div>
+          <div class="expanded-content">
+            <p>Expanded information about the team member...</p>
+            <button class="expand-btn">Read more</button>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" data-game-type="3D strategy">
+        <a href="https://doruksasmaz.com/Internal.html" style="color: #fff">
+          <video
+            class="desktop-video"
+            style="max-height: 200px; object-fit: cover; width: 100%"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="content/Internal.webm" type="video/webm" />
+          </video>
+          <img
+            class="mobile-image"
+            src="content/Internal.png"
+            style="max-height: 200px"
+            alt="Enhancer Gaming Hackathon"
+          />
+
+          <div class="card-content" style="line-height: normal">
+            <h4 style="font-family: 'Bungee'; font-weight: 100">
+              Intern: All Conflict
+            </h4>
+            <p>
+              High-octane office mayhem in a first-person race against the
+              clock.
+            </p>
+          </div>
+          <div class="expanded-content">
+            <p>Expanded information about the team member...</p>
+            <button class="expand-btn">Read more</button>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" data-game-type="action VR">
+        <a href="https://doruksasmaz.com/ApeAscent.html" style="color: #fff">
+          <video
+            class="desktop-video"
+            style="max-height: 200px; object-fit: cover; width: 100%"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="content/ApeAscent.webm" type="video/webm" />
+          </video>
+          <img
+            class="mobile-image"
+            src="content/ApeAscent.png"
+            style="max-height: 200px"
+            alt="Enhancer Gaming Hackathon"
+          />
+
+          <div class="card-content" style="line-height: normal">
+            <h4 style="font-family: 'Bungee'; font-weight: 100">
+              Ape Ascent
+            </h4>
+            <p>
+              Unleash your primal fury in a vertigo-inducing VR climb for
+              dominance.
+            </p>
+          </div>
+          <div class="expanded-content">
+            <p>Expanded information about the team member...</p>
+            <button class="expand-btn">Read more</button>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" data-game-type="action 3D Horror">
+        <a href="https://doruksasmaz.com/HotHell.html" style="color: #fff">
+          <video
+            class="desktop-video"
+            style="max-height: 200px; object-fit: cover; width: 100%"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            <source src="content/HotHell.webm" type="video/webm" />
+          </video>
+          <img
+            class="mobile-image"
+            src="content/HotHell.png"
+            style="max-height: 200px"
+            alt="Enhancer Gaming Hackathon"
+          />
+
+          <div class="card-content" style="line-height: normal">
+            <h4 style="font-family: 'Bungee'; font-weight: 100">Hot Hell</h4>
+            <p>Hot Hell: where every corridor twists into a new nightmare.</p>
+          </div>
+          <div class="expanded-content">
+            <p>Expanded information about the team member...</p>
+            <button class="expand-btn">Read more</button>
+          </div>
+        </a>
+      </div>
+
+      <!-- Add more team member cards as needed... -->
+    </div>
+  </div>
+  <!-- partial -->
+</body>
+</html>

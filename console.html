@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=0" />
+  <!--link rel="stylesheet" href="style.css"-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./console.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet" />
+  <!--<script type="text/javascript" src="js.js"></script>-->
+
+  <title>
+  </title>
+</head>
+
+<body>
+  <div id="backstory">
+  </div>
+  <div id="hint">
+    <div>HINT:</div>
+    <div id="hint-text"></div>
+  </div>
+
+  <div id="container">
+    <div class="help-info">Enter "help" for more information</div>
+    <output>
+    </output>
+    <div id="input-line" class="input-line">
+      <div class="prompt"></div>
+      <div>
+        <input class="cmdline" autofocus />
+      </div>
+    </div>
+  </div>
+
+  <div id="dialogue">
+    <div id="character-photo-container">
+      <img id="character-photo" src="content/Logo.png" alt="Diabolical Studios Logo"/>
+      <div id="dialogue-text"></div>
+    </div>
+
+  </div>
+  <script src="console.js"></script>
+  <script type="text/javascript">
+    document.addEventListener('touchmove', function (event) {
+      if (event.scale !== 1) { event.preventDefault(); }
+    }, { passive: false });
+  </script>
+</body>
+
+</html>
